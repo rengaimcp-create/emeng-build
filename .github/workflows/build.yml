@@ -9,6 +9,8 @@ jobs:
       - uses: actions/checkout@v4
       - name: Ekstrak proyek
         run: unzip -q EmengInjectorAndroid_Project.zip
+      - name: Samakan target JVM ke 17
+        run: echo 'kotlin { jvmToolchain(17) }' >> EmengInjectorAndroid/app/build.gradle.kts
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
